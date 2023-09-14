@@ -139,12 +139,6 @@ data "aws_iam_policy_document" "aws_lb" {
       "elasticloadbalancing:DeleteTargetGroup",
       "elasticloadbalancing:RemoveTags",
     ]
-
-    condition {
-      test     = "Null"
-      variable = "aws:ResourceTag/ingress.k8s.aws/cluster"
-      values   = ["false"]
-    }
   }
 
   statement {
